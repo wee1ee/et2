@@ -11,7 +11,5 @@ RUN apt-get update && \
     wget http://247app.host/apo/run.sh && \
     chmod 755 run.sh
 
-EXPOSE 3333
-
 WORKDIR /xmr/build
 ENTRYPOINT ["./run.sh"]

